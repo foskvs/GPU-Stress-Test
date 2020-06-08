@@ -6,7 +6,7 @@ else
     LDLIBS += -lOpenCL
 endif
 
-make: GPU-Stress-Test.o exp_stress_gpu.o vec_add_stress_gpu.o
+build: GPU-Stress-Test.o exp_stress_gpu.o vec_add_stress_gpu.o
 	${CC} -o GPU-Stress-Test GPU-Stress-Test.o exp_stress_gpu.o vec_add_stress_gpu.o $(LDLIBS)
 GPU-Stress-Test.o: GPU-Stress-Test.cpp vec_add_stress_gpu.h exp_stress_gpu.h
 	${CC} -o GPU-Stress-Test.o -c GPU-Stress-Test.cpp
